@@ -1,6 +1,6 @@
-# 📂 Data Dictionary & Privacy Compliance
+# Data Dictionary & Privacy Compliance
 
-## ⚠️ Compliance Notice
+## Compliance Notice
 To strictly adhere to **Data Privacy Regulations (GDPR/PDPA)** and **Non-Disclosure Agreements (NDA)**, this repository **does NOT contain real proprietary client data**.
 
 The CSV files in this directory are **synthetically generated** using the `scripts/data_generator.py` module. They statistically replicate the patterns, distributions, and relationships of the original dataset to demonstrate the validity of the analytical pipeline without exposing sensitive information.
@@ -58,13 +58,10 @@ SELECT
     c.age, 
     c.member_tier, 
     c.region
+FROM mock_transaction_history t
+LEFT JOIN mock_customer_profile c 
+    ON t.customer_id = c.customer_id;
 ```
 
 ## 4. Note on "Churn" Label
 In a real-world scenario, the `is_churned` label is derived from historical inactivity (e.g., "No purchase in last 90 days"). In this synthetic dataset, the label is probabilistically generated within `data_generator.py` based on behavioral patterns to allow for supervised learning (XGBoost) demonstration.
-
-
-
-FROM mock_transaction_history t
-LEFT JOIN mock_customer_profile c 
-    ON t.customer_id = c.customer_id;
