@@ -1,12 +1,3 @@
-# Retail-Analytics-Strategy-Engine
-
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
-![XGBoost](https://img.shields.io/badge/ML-XGBoost-orange?style=for-the-badge)
-![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-yellow?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Privacy%20Compliant-green?style=for-the-badge)
-
-> **Objective:** Transforming raw transactional data into actionable retention and cross-sell strategies.
-
 <div align="center">
   <h1>Retail Analytics Strategy Engine</h1>
   <p>
