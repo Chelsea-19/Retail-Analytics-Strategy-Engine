@@ -106,8 +106,8 @@ Retail-Analytics-Strategy-Engine/
 ├── scripts/
 │   ├── data_generator.py              # Simulates realistic retail data (Privacy Safe)
 │   ├── customer_segmentation.py       # RFM Analysis & K-Means Clustering
-│   ├── churn_prediction.py            # XGBoost Training & SHAP Interpretation
-│   └── market_basket.py               # Association Rules (Apriori) engine
+│   ├── propensity_score.py            # XGBoost Training & SHAP Interpretation
+│   └── recommendation.py              # Association Rules (Apriori) engine
 ├── results/
 │   ├── shap_feature_importance.png
 │   ├── product_cross_sell_matrix.png
@@ -156,7 +156,7 @@ Output: Files generated in the project root or specified data folder.
 Identify customer clusters based on purchasing behavior.
 
 ```bash
-python scripts/segmentation.py
+python scripts/customer_segmentation.py
 ```
 Output: Generates `customer_with_segments.csv` and K-Selection reports.
 
@@ -164,7 +164,7 @@ Output: Generates `customer_with_segments.csv` and K-Selection reports.
 Train the XGBoost model and generate SHAP plots to understand churn drivers.
 
 ```bash
-python scripts/churn_prediction.py
+python scripts/propensity_score.py
 ```
 Output: Displays/Saves SHAP summary plots and prints model accuracy metrics.
 
@@ -172,7 +172,7 @@ Output: Displays/Saves SHAP summary plots and prints model accuracy metrics.
 Run the Market Basket Analysis to find product associations.
 
 ```bash
-python scripts/market_basket.py
+python scripts/recommendation.py
 ```
 Output: Prints top association rules (e.g., "If Buy A -> Then Buy B") and saves the correlation heatmap.
 
