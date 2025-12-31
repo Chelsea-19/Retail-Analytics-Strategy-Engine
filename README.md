@@ -62,10 +62,10 @@ By analyzing co-occurrence patterns in transaction history:
 Retail-Analytics-Strategy-Engine/
 ├── data/                     # Folder for generated CSVs (excluded from git)
 ├── scripts/
-│   ├── data_generator.py     # Simulates realistic retail data (Privacy Safe)
-│   ├── segmentation.py       # RFM Analysis & K-Means Clustering
-│   ├── churn_prediction.py   # XGBoost Training & SHAP Interpretation
-│   └── market_basket.py      # Association Rules (Apriori) engine
+│   ├── data_generator.py              # Simulates realistic retail data (Privacy Safe)
+│   ├── customer_segmentation.py       # RFM Analysis & K-Means Clustering
+│   ├── churn_prediction.py            # XGBoost Training & SHAP Interpretation
+│   └── market_basket.py               # Association Rules (Apriori) engine
 ├── results/
 │   ├── shap_feature_importance.png
 │   ├── product_cross_sell_matrix.png
