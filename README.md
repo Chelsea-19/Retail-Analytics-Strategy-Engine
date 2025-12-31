@@ -1,101 +1,11 @@
-<div align="center">
-  <h1>Retail Analytics Strategy Engine</h1>
-  <p>
-    <b>
-      <a href="#-english-version">🇺🇸 English Version</a> | 
-      <a href="#-中文版">🇨🇳 中文版</a>
-    </b>
-  </p>
-</div>
+# Retail-Analytics-Strategy-Engine
 
----
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
+![XGBoost](https://img.shields.io/badge/ML-XGBoost-orange?style=for-the-badge)
+![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-yellow?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Privacy%20Compliant-green?style=for-the-badge)
 
-<div id="-english-version"></div>
-
-## 🇺🇸 English Version
-
-**Retail Analytics Strategy Engine** is a comprehensive data analysis solution designed to uncover customer value, predict churn risk, and improve cross-selling rates through machine learning algorithms. The project includes three core analysis modules: Customer Segmentation, Propensity Scoring, and Recommendation System.
-
-### 📋 Key Features
-
-#### 1. Customer Segmentation
-- **File**: `scripts/customer_segmentation.py`
-- **Algorithm**: K-Means Clustering + PCA (Principal Component Analysis)
-- **Functionality**:
-  - Based on RFM (Recency, Frequency, Monetary) model and channel preferences.
-  - Automatically segments customers into **5 strategic groups** (n_clusters=5).
-  - Generates profile reports to identify high-value customers and potential churners.
-
-#### 2. Propensity Scoring & Churn Modeling
-- **File**: `scripts/propensity_score.py`
-- **Algorithm**: XGBoost Classifier + SHAP (Explainability) + SMOTE (Oversampling)
-- **Functionality**:
-  - **Churn Prediction**: Identifies customers at risk of leaving.
-  - **Loyalty Prediction**: Discovers high-potential loyal customers.
-  - Provides SHAP value analysis to explain key drivers (e.g., recency, total spend).
-
-#### 3. Recommendation Engine
-- **File**: `scripts/recommendation.py`
-- **Algorithm**: Apriori (Market Basket Analysis)
-- **Functionality**:
-  - Mines strong Association Rules between products.
-  - Generates "bundle suggestions" based on Support, Confidence, and Lift.
-  - Ideal for designing Cross-sell and Bundling strategies (e.g., QLab Tea case).
-
-### 🛠️ Tech Stack
-- **Data Processing**: `pandas`, `numpy`
-- **Machine Learning**: `scikit-learn`, `xgboost`, `mlxtend`, `imbalanced-learn`
-- **Visualization**: `matplotlib`, `seaborn`, `shap`
-
-<br>
-<div align="right">
-  <a href="#-中文版">Go to Chinese Version 🇨🇳</a>
-</div>
-<br>
-
----
-
-<div id="-中文版"></div>
-
-## 🇨🇳 中文版
-
-**零售分析策略引擎 (Retail Analytics Strategy Engine)** 这是一个综合性的零售数据分析解决方案，旨在通过机器学习算法挖掘客户价值、预测流失风险并提升交叉销售率。项目包含三个核心分析模块：客户分群、倾向性评分和商品推荐系统。
-
-### 📋 核心功能 (Key Features)
-
-#### 1. 客户分群 (Customer Segmentation)
-- **文件**: `scripts/customer_segmentation.py`
-- **算法**: K-Means Clustering + PCA (主成分分析)
-- **功能**:
-  - 基于 RFM (Recency, Frequency, Monetary) 模型及渠道偏好特征。
-  - 自动将客户划分为 **5 个战略群体** (n_clusters=5)。
-  - 生成分群画像报告，识别高价值客户与潜在流失客户。
-
-#### 2. 倾向性评分与流失预测 (Propensity & Churn Modeling)
-- **文件**: `scripts/propensity_score.py`
-- **算法**: XGBoost Classifier + SHAP (可解释性分析) + SMOTE (过采样)
-- **功能**:
-  - **流失预测 (Churn Risk)**: 识别即将流失的客户。
-  - **忠诚度预测 (Loyalty)**: 挖掘高潜力的忠诚客户。
-  - 提供 SHAP 值分析，解释影响模型决策的关键因子（如：最近一次购买时间、消费金额等）。
-
-#### 3. 智能推荐引擎 (Recommendation Engine)
-- **文件**: `scripts/recommendation.py`
-- **算法**: Apriori (购物篮分析 / Market Basket Analysis)
-- **功能**:
-  - 挖掘商品间的强关联规则 (Association Rules)。
-  - 基于支持度 (Support)、置信度 (Confidence) 和提升度 (Lift) 生成“购买组合建议”。
-  - 适用于设计交叉销售 (Cross-sell) 和捆绑销售 (Bundling) 策略（例如：QLab Tea 案例）。
-
-### 🛠️ 技术栈 (Tech Stack)
-- **数据处理**: `pandas`, `numpy`
-- **机器学习**: `scikit-learn`, `xgboost`, `mlxtend`, `imbalanced-learn`
-- **可视化**: `matplotlib`, `seaborn`, `shap`
-
-<br>
-<div align="right">
-  <a href="#-english-version">回到英文版本 🇺🇸</a>
-</div>
+> **Objective:** Transforming raw transactional data into actionable retention and cross-sell strategies.
 
 ## Executive Summary
 A leading tea retailer in Southeast Asia (Singapore, Malaysia, Hong Kong) faces increasing customer acquisition costs and stagnant Average Order Value (AOV). 
