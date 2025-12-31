@@ -18,6 +18,38 @@ This project implements a **CRISP-DM** based analytical framework to solve two c
 
 ---
 
+## Analytical Modules
+
+### 1. Customer Segmentation Engine
+* **Objective:** Identify distinct customer groups and personas to tailor marketing efforts.
+
+* **Feature Engineering:**
+    * **RFM Analysis:** Recency, Frequency, Monetary value.
+    * **O2O Identification:** Automatically detects offline transactions (keyword: "Funan") to distinguish physical store behavior from online activity.
+    * **Log Transformation:** Handles skewed monetary data for better clustering performance.
+* **Visualization:** Produces a **Strategic Value Matrix** (Consulting-style Bubble Chart) that maps "Recency" against "Monetary Value" to visually identify segments like "Champions" or "At Risk".
+
+### 2. Propensity Prediction Engine
+* **Objective:** Proactively manage customer lifecycle by predicting future states.
+
+* **Modeling Approach:**
+    * Trains two separate **XGBoost Classifiers**: one for **Churn Risk** and one for **Loyalty Potential**.
+    * Utilizes **SMOTE** (Synthetic Minority Over-sampling Technique) within a pipeline to handle class imbalance.
+* **Strategic Output:**
+    * Generates an **Action Matrix** segmenting customers into actionable categories (e.g., *VIP Rescue*, *Upsell/Growth*) to guide retention strategies.
+
+### 3. Recommendation System
+* **Objective:** Increase Average Order Value (AOV) through data-driven product bundling and cross-selling.
+
+* **Methodology:**
+    * **Market Basket Analysis:** Implements the **Apriori algorithm** to find frequent itemsets.
+    * **Churn Filtering:** Excludes churned customers to ensure recommendations reflect active user preferences.
+* **Output:**
+    * Identifies strong association rules (Lift > 1.0).
+    * Auto-generates marketing copy for bundles (e.g., *"Customers who bought Oolong also loved Premium Pu-erh"*).
+
+---
+
 ## Project Architecture
 
 The solution is divided into three strategic modules:
@@ -29,32 +61,42 @@ The solution is divided into three strategic modules:
 | **3. Churn Prediction** | Proactive retention. | **XGBoost Classifier** + **SMOTE** (Imbalance handling) + **SHAP** (Explainability). |
 | **4. Market Basket Analysis** | Increase wallet share (AOV). | **Apriori Algorithm** for Association Rule Mining. |
 
----
-
 ## Key Insights & Business Translation
 
-### 1. The "Why" Behind Churn (Explainable AI)
-Using SHAP (SHapley Additive exPlanations), we deconstructed the black-box model to understand driver behaviors.
+### 1. Strategic Portfolio Management (The "3A" Framework)
+Instead of a "one-size-fits-all" marketing approach, we applied the **Propensity Engine** to map the entire customer base onto a risk-value plane. This visualizes our **"Anticipate"** strategy.
 
-![SHAP Summary](results/shap_feature_importance.png)
-*(Note: Visual based on mock data replication)*
+![Strategic Customer Portfolio Matrix](bubble_figure.png)
 
-* **Insight:** `Recency` (days since last purchase) is the #1 predictor of churn. The risk creates a "hockey stick" curve after **60 days** of inactivity.
-* **Action:** Implement an automated "We Miss You" email trigger specifically at **Day 45** (preventative) and **Day 60** (reactive) with a time-bound discount.
+* **VIP Rescue (High Risk, High Value):** Identified top-tier customers (e.g., **Customer #918**, LTV $1,516) facing a **77% churn risk**.
+    * *Action:* Immediate concierge outreach and unconditional coupons, as their retention value outweighs the cost.
+* **Let Go (High Risk, Low Value):** Identified segments (e.g., **Customer #621**) where the cost of retention exceeds future value .
+    * *Action:* Cease ad spend and reallocate budget to "Upsell" segments.
 
-### 2. Strategic Product Bundling
-By analyzing co-occurrence patterns in transaction history:
+### 2. The "Why" Behind Churn (Explainable AI)
+Using **SHAP (SHapley Additive exPlanations)**, we deconstructed the model to validate business logic and understand driver behaviors.
 
-![Correlation Heatmap](results/product_cross_sell_matrix.png)
+![SHAP Summary - Churn Drivers](SHAP.png)
 
-* **Insight:** Strong correlation found between **"Premium Pu-erh"** and **"Tea Accessories"**.
-* **Action:** Create a "Gong Fu Cha Starter Set" bundle. When a user adds Pu-erh to the cart, recommend the accessory kit for 15% off.
+* **Insight:** The model identifies **Frequency** (represented as the top feature) as the **#1 predictive factor** for retention.
+* **Operational Trigger:** High-value customers showing a drop in frequency trigger an automated "We Miss You" campaign before they hit the critical churn window.
 
-### 3. Customer Personas (Clustering)
-* **"Loyal Connoisseurs":** High Frequency, High Monetary, Low Recency. -> *Strategy: Exclusive tastings (Gold Tier).*
-* **"Dormant Big Spenders":** Low Frequency, High Monetary, High Recency. -> *Strategy: High-value win-back campaigns.*
+### 3. Unlocking the "Second Growth Curve" (Cross-Sell)
+Market Basket Analysis revealed a specific consumption upgrade path, debunking the assumption that all tea drinkers are the same.
 
----
+![Product Co-purchase Correlation Matrix](heat_map.png)
+
+* **The "One-Way" Upgrade:** Analysis shows a strong asymmetry. **"Floral Blend"** users (Cluster 3) are **63.6% likely** to upgrade to **"Premium Pu-erh"**, whereas the reverse flow is only 11.7%.
+* **Strategy:** Launch the **"Connoisseur's Journey"** bundle. Instead of generic cross-selling, explicitly target Cluster 3 users with a Pu-erh sampler add-on to drive ARPU uplift.
+
+### 4. The O2O Blind Spot (Data Gap)
+Our clustering analysis exposed a critical infrastructure gap in the data collection process regarding our physical store at Funan Mall.
+
+![Customer Segments & Offline Preference](PCA.png)
+
+* **Insight:** As seen in the *Business View* (right panel), the `Offline_Ratio` is **0.0%** for all user clusters.
+* **Implication:** We are currently unable to attribute Funan Mall offline sampling to online retention, creating a "blind spot" in identifying true omnichannel users.
+* **Action (Phase 1 Align):** The immediate next step is integrating **Funan POS data** to merge offline transaction history before expanding to Malaysia/HK.
 
 ## Repository Structure
 
