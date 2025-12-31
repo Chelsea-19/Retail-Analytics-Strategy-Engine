@@ -178,24 +178,6 @@ Output: Prints top association rules (e.g., "If Buy A -> Then Buy B") and saves 
 
 ---
 
-## Future Roadmap (Scalability)
-
-To transition this project from a prototype to a production-ready system, the following improvements are proposed based on the **Data Science Lifecycle**:
-
-### 1. Model Deployment (MLOps)
-* **Current State:** Scripts run locally via CLI.
-* **Future State:** Wrap the XGBoost model in a **FastAPI** microservice. Build a **Streamlit** dashboard for the Marketing Team to input a Customer ID and get real-time "Churn Risk Score" and "Next Best Action".
-
-### 2. Advanced Metrics (CLV)
-* **Current State:** Focus on Churn Probability.
-* **Future State:** Implement **Customer Lifetime Value (CLV)** prediction using the *BG/NBD model (Lifetimes library)*. This will allow the business to prioritize retention budget on high-value customers rather than just high-risk ones.
-
-### 3. Automated Pipeline
-* **Current State:** Manual execution.
-* **Future State:** Use **Apache Airflow** to schedule weekly retraining of the model as new transaction data arrives, ensuring the model adapts to changing market trends (Concept Drift).
-
----
-
 ## Contribution
 
 Contributions are welcome! This project follows the standard "Fork & Pull" open-source model.
