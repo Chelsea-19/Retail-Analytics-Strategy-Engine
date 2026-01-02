@@ -66,7 +66,7 @@ The solution is divided into three strategic modules:
 ### 1. Strategic Portfolio Management (The "3A" Framework)
 Instead of a "one-size-fits-all" marketing approach, we applied the **Propensity Engine** to map the entire customer base onto a risk-value plane. This visualizes our **"Anticipate"** strategy.
 
-![Strategic Customer Portfolio Matrix](result/bubble_figure.png)
+![Strategic Customer Portfolio Matrix](results/bubble_figure.png)
 
 * **VIP Rescue (High Risk, High Value):** Identified top-tier customers (e.g., **Customer #918**, LTV $1,516) facing a **77% churn risk**.
     * *Action:* Immediate concierge outreach and unconditional coupons, as their retention value outweighs the cost.
@@ -76,7 +76,7 @@ Instead of a "one-size-fits-all" marketing approach, we applied the **Propensity
 ### 2. The "Why" Behind Churn (Explainable AI)
 Using **SHAP (SHapley Additive exPlanations)**, we deconstructed the model to validate business logic and understand driver behaviors.
 
-![SHAP Summary - Churn Drivers](SHAP.png)
+![SHAP Summary - Churn Drivers](results/SHAP.png)
 
 * **Insight:** The model identifies **Frequency** (represented as the top feature) as the **#1 predictive factor** for retention.
 * **Operational Trigger:** High-value customers showing a drop in frequency trigger an automated "We Miss You" campaign before they hit the critical churn window.
@@ -84,7 +84,7 @@ Using **SHAP (SHapley Additive exPlanations)**, we deconstructed the model to va
 ### 3. Unlocking the "Second Growth Curve" (Cross-Sell)
 Market Basket Analysis revealed a specific consumption upgrade path, debunking the assumption that all tea drinkers are the same.
 
-![Product Co-purchase Correlation Matrix](heat_map.png)
+![Product Co-purchase Correlation Matrix](results/heat_map.png)
 
 * **The "One-Way" Upgrade:** Analysis shows a strong asymmetry. **"Floral Blend"** users (Cluster 3) are **63.6% likely** to upgrade to **"Premium Pu-erh"**, whereas the reverse flow is only 11.7%.
 * **Strategy:** Launch the **"Connoisseur's Journey"** bundle. Instead of generic cross-selling, explicitly target Cluster 3 users with a Pu-erh sampler add-on to drive ARPU uplift.
@@ -92,7 +92,7 @@ Market Basket Analysis revealed a specific consumption upgrade path, debunking t
 ### 4. The O2O Blind Spot (Data Gap)
 Our clustering analysis exposed a critical infrastructure gap in the data collection process regarding our physical store at Funan Mall.
 
-![Customer Segments & Offline Preference](PCA.png)
+![Customer Segments & Offline Preference](results/PCA.png)
 
 * **Insight:** As seen in the *Business View* (right panel), the `Offline_Ratio` is **0.0%** for all user clusters.
 * **Implication:** We are currently unable to attribute Funan Mall offline sampling to online retention, creating a "blind spot" in identifying true omnichannel users.
