@@ -73,6 +73,8 @@ Instead of a "one-size-fits-all" marketing approach, we applied the **Propensity
 * **Let Go (High Risk, Low Value):** Identified segments (e.g., **Customer #621**) where the cost of retention exceeds future value .
     * *Action:* Cease ad spend and reallocate budget to "Upsell" segments.
 
+![Customer Segmentation](results/segments_svd2_scatter.png)
+
 ### 2. The "Why" Behind Churn (Explainable AI)
 Using **SHAP (SHapley Additive exPlanations)**, we deconstructed the model to validate business logic and understand driver behaviors.
 
@@ -84,7 +86,7 @@ Using **SHAP (SHapley Additive exPlanations)**, we deconstructed the model to va
 ### 3. Unlocking the "Second Growth Curve" (Cross-Sell)
 Market Basket Analysis revealed a specific consumption upgrade path, debunking the assumption that all tea drinkers are the same.
 
-![Product Co-purchase Correlation Matrix](results/heat_map.png)
+![Product Co-purchase Correlation Matrix](results/heatmap.png)
 
 * **The "One-Way" Upgrade:** Analysis shows a strong asymmetry. **"Floral Blend"** users (Cluster 3) are **63.6% likely** to upgrade to **"Premium Pu-erh"**, whereas the reverse flow is only 11.7%.
 * **Strategy:** Launch the **"Connoisseur's Journey"** bundle. Instead of generic cross-selling, explicitly target Cluster 3 users with a Pu-erh sampler add-on to drive ARPU uplift.
