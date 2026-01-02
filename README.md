@@ -66,7 +66,7 @@ The solution is divided into three strategic modules:
 ### 1. Strategic Portfolio Management (The "3A" Framework)
 Instead of a "one-size-fits-all" marketing approach, we applied the **Propensity Engine** to map the entire customer base onto a risk-value plane. This visualizes our **"Anticipate"** strategy.
 
-![Strategic Customer Portfolio Matrix](bubble_figure.png)
+![Strategic Customer Portfolio Matrix](result/bubble_figure.png)
 
 * **VIP Rescue (High Risk, High Value):** Identified top-tier customers (e.g., **Customer #918**, LTV $1,516) facing a **77% churn risk**.
     * *Action:* Immediate concierge outreach and unconditional coupons, as their retention value outweighs the cost.
