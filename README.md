@@ -8,7 +8,7 @@
 > **Objective:** Transforming raw transactional data into actionable retention and cross-sell strategies.
 
 ## Project Overview
-A leading tea retailer in Southeast Asia (Singapore, Malaysia, Hong Kong) faces increasing customer acquisition costs and stagnant Average Order Value (AOV). 
+A leading tea retailer in Southeast Asia faces increasing customer acquisition costs and stagnant Average Order Value (AOV). 
 
 This project implements a **CRISP-DM** based analytical framework to solve two critical business problems:
 1.  **Who is leaving?** (Churn Prediction & Prevention)
